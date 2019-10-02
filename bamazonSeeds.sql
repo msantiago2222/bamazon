@@ -11,3 +11,4 @@ CREATE TABLE products(
     PRIMARY KEY(id)
 );
 
+SELECT * FROM bamazon_db
