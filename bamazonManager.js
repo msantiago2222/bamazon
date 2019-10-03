@@ -71,7 +71,7 @@ var viewProducts = function() {
 
 // Displays products with low inventory.
 var viewLowInventory = function() {
-	var query = "SELECT id, product_name, department_name, price, stock_quantity FROM products WHERE stock_quantity < 5";
+	var query = "SELECT item_id, product_name, department_name, price, stock_quantity FROM products WHERE stock_quantity < 5";
 	connection.query(query, function(err, res) {
 		if (err) throw err;
 		for (var i = 0; i < res.length; i++) {
@@ -105,7 +105,7 @@ var addInventory = function() {
 
 			// Gets product who's stock needs to be updated.
 			for (var i = 0; i < results.length; i++) {
-				if (results[i].id === parseInt(answer.product_ID)) {
+				if (results[i].item_id === parseInt(answer.product_ID)) {
 					chosenItem = results[i];
 					console.log (results)
 				}
